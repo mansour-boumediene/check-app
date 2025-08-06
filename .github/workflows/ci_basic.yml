@@ -6,17 +6,19 @@ on:
       - main
 
 jobs:
-  check-app:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout du code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Donner les permissions d'exécution
-        run: chmod +x check_app.sh
+      - name: Run application check script
+        run: chmod +x ./app/check_app.sh && ./app/check_app.sh
 
-      - name: Exécuter le script de vérification
-        run: ./check_app.sh
+      - name: Display index.html content
+        run: cat ./app/index.html
 
-# ajout du déclancheur on: push: branches:  main
+
+# Job unique
 
