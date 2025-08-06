@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "🔍 Début de la vérification de l'application..."
+
+if [ -f "index.html" ]; then
+    echo "✅ Le fichier index.html est présent."
+    echo "✔️ Vérification terminée avec succès."
+    exit 0
+else
+    echo "❌ Le fichier index.html est manquant."
+    echo "⚠️ Vérification terminée avec erreur."
+    exit 1
+fi
