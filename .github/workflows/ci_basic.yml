@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   check-app:
@@ -20,3 +17,6 @@ jobs:
 
       - name: Exécuter le script de vérification
         run: ./check_app.sh
+
+# ajout du déclancheur on: push: branches:  main
+
