@@ -1,0 +1,22 @@
+name: Basic CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Donner les permissions d'exécution
+        run: chmod +x check_app.sh
+
+      - name: Exécuter le script de vérification
+        run: ./check_app.sh
